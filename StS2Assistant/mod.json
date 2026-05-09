@@ -1,0 +1,12 @@
+{
+  "id": "StS2Assistant",
+  "name": "StS2 Assistant",
+  "author": "YourName",
+  "version": "1.0.0",
+  "description": "AI-powered helper mod with build recommendations",
+  "godot_version": "4.5.1",
+  "main_script": "res://mods/StS2Assistant/Main.cs",
+  "dependencies": [
+    "Alchyr.Sts2.BaseLib"
+  ]
+}

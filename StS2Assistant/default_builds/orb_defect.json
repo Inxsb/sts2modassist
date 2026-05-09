@@ -1,0 +1,26 @@
+{
+  "Id": "defect_orb",
+  "Name": "Orb Focus Defect",
+  "CharacterClass": "Defect",
+  "PriorityCards": [
+    "Claw",
+    "Glacier",
+    "Zap",
+    "Dualcast",
+    "Biased Cognition",
+    "Recursion"
+  ],
+  "SynergyRelics": [
+    "Snecko Eye",
+    "Orb Incubator",
+    "Cracked Core",
+    "Data Disk"
+  ],
+  "PriorityTags": ["orb", "lightning", "frost"],
+  "PreferredTypes": ["Skill", "Power"],
+  "Playstyle": "orb_generation",
+  "RiskTolerance": 0.5,
+  "IsActive": false,
+  "Notes": "Generate and evoke orbs efficiently for damage and block",
+  "Version": "1.0"
+}

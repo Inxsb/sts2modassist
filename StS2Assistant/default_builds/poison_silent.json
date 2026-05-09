@@ -1,0 +1,25 @@
+{
+  "Id": "silent_poison",
+  "Name": "Poison Silent",
+  "CharacterClass": "Silent",
+  "PriorityCards": [
+    "Noxious Fumes",
+    "Catalyst",
+    "Poisonous Stab",
+    "Bane",
+    "Deadly Poison"
+  ],
+  "SynergyRelics": [
+    "Snecko Eye",
+    "Chemical X",
+    "Poison Ivy",
+    "Violet Lotus"
+  ],
+  "PriorityTags": ["poison"],
+  "PreferredTypes": ["Skill", "Attack"],
+  "Playstyle": "attrition",
+  "RiskTolerance": 0.4,
+  "IsActive": false,
+  "Notes": "Focus on applying poison and multiplying it with Catalyst",
+  "Version": "1.0"
+}

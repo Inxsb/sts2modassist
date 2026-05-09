@@ -1,0 +1,25 @@
+{
+  "Id": "ironclad_strength",
+  "Name": "Strength Stack Ironclad",
+  "CharacterClass": "Ironclad",
+  "PriorityCards": [
+    "Inflame",
+    "Demon Form",
+    "Limit Break",
+    "Feel No Pain",
+    "Entrench"
+  ],
+  "SynergyRelics": [
+    "Brimstone",
+    "Letter Opener",
+    "Orichalcum",
+    "Red Skull"
+  ],
+  "PriorityTags": ["strength", "exhaust"],
+  "PreferredTypes": ["Power", "Skill"],
+  "Playstyle": "scaling",
+  "RiskTolerance": 0.6,
+  "IsActive": false,
+  "Notes": "Stack strength early, then use Limit Break to double it",
+  "Version": "1.0"
+}

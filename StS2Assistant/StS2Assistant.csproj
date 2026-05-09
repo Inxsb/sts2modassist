@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin/$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Alchyr.Sts2.BaseLib" Version="1.0.0" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <!-- Godot 4.5.1 Mono references - adjust paths based on your installation -->
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>$(GODOT_SHARP_PATH)/GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharpEditor">
+      <HintPath>$(GODOT_SHARP_PATH)/GodotSharpEditor.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Fallback for local development without GODOT_SHARP_PATH -->
+  <PropertyGroup Condition="'$(GODOT_SHARP_PATH)' == ''">
+    <GODOT_SHARP_PATH>../godot-sharp-assemblies</GODOT_SHARP_PATH>
+  </PropertyGroup>
+
+</Project>

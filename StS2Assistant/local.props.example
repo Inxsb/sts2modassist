@@ -1,0 +1,27 @@
+<!-- Project-specific settings for local development -->
+<!-- Copy this file to local.props and adjust paths for your system -->
+
+<Project>
+  <PropertyGroup>
+    <!-- 
+      Path to GodotSharp.dll and GodotSharpEditor.dll
+      Typical locations:
+      
+      Windows:
+        C:\Program Files (x86)\Steam\steamapps\common\Godot Mono\GodotSharp\Api\Debug
+      
+      Linux:
+        ~/.local/share/Steam/steamapps/common/Godot Mono/GodotSharp/Api/Debug
+      
+      macOS:
+        ~/Library/Application Support/Steam/steamapps/common/Godot Mono/GodotSharp/Api/Debug
+    -->
+    <GODOT_SHARP_PATH>/path/to/your/godot/GodotSharp/Api/Debug</GODOT_SHARP_PATH>
+    
+    <!-- Optional: Override NuGet package source if using local packages -->
+    <!-- <NUGET_PACKAGES>$(HOME)/.nuget/packages</NUGET_PACKAGES> -->
+  </PropertyGroup>
+  
+  <!-- Alternative: Use environment variable GODOT_SHARP_PATH instead of editing this file -->
+  <!-- export GODOT_SHARP_PATH=/path/to/godot/sharp -->
+</Project>
