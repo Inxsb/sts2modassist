@@ -1,0 +1,18 @@
+{
+  "Name": "Power Shiv Rogue",
+  "PriorityCards": [
+    "After Image",
+    "Bullet Time",
+    "Grand Finale",
+    "Setup",
+    "Shiv"
+  ],
+  "SynergyRelics": [
+    "Snecko Eye",
+    "Runic Pyramid",
+    "Hovering Kite",
+    "Orichalcum"
+  ],
+  "Playstyle": "combo",
+  "RiskTolerance": 0.6
+}

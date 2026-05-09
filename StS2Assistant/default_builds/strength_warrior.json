@@ -1,0 +1,18 @@
+{
+  "Name": "Strength Warrior",
+  "PriorityCards": [
+    "Inflame",
+    "Limit Break",
+    "Demon Form",
+    "Iron Wave",
+    "Heavy Blade"
+  ],
+  "SynergyRelics": [
+    "Brimstone",
+    "Deadly Poison",
+    "Letter Opener",
+    "Red Skull"
+  ],
+  "Playstyle": "aggressive",
+  "RiskTolerance": 0.7
+}

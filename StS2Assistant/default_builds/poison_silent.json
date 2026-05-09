@@ -1,0 +1,18 @@
+{
+  "Name": "Poison Silent",
+  "PriorityCards": [
+    "Noxious Fumes",
+    "Catalytic Flower",
+    "Bane",
+    "Poisoned Stab",
+    "Well-Laid Plans"
+  ],
+  "SynergyRelics": [
+    "Snecko Eye",
+    "Chemical X",
+    "Toxic Egg",
+    "Ectoplasm"
+  ],
+  "Playstyle": "attrition_control",
+  "RiskTolerance": 0.4
+}

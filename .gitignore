@@ -1,0 +1,39 @@
+```
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.class
+
+# Dependencies
+packages/
+node_modules/
+*.nupkg
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Configuration backup
+*.bak
+*.backup
+```

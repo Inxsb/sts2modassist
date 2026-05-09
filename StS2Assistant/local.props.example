@@ -1,0 +1,35 @@
+<!--
+  local.props.example для StS2Assistant
+  Скопируйте в local.props и настройте пути под вашу систему
+-->
+<Project>
+  <PropertyGroup>
+    <!-- Путь к установке Godot 4.5.1 Mono -->
+    <GodotPath>C:\Program Files\Godot\Godot_v4.5.1_mono.exe</GodotPath>
+    
+    <!-- Путь к установке Slay the Spire 2 -->
+    <StS2Path>C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire2</StS2Path>
+    
+    <!-- Путь к папке модов GUMM -->
+    <GummModsPath>$(StS2Path)\mods</GummModsPath>
+    
+    <!-- Целевая папка для публикации мода -->
+    <PublishOutput>$(GummModsPath)\StS2Assistant</PublishOutput>
+  </PropertyGroup>
+
+  <!-- Альтернативные пути для Linux -->
+  <PropertyGroup Condition="'$(OS)' == 'Unix'">
+    <GodotPath>/usr/bin/godot4</GodotPath>
+    <StS2Path>$(HOME)/.steam/steam/steamapps/common/SlayTheSpire2</StS2Path>
+    <GummModsPath>$(StS2Path)/mods</GummModsPath>
+    <PublishOutput>$(GummModsPath)/StS2Assistant</PublishOutput>
+  </PropertyGroup>
+
+  <!-- Target для автоматического копирования в папку модов -->
+  <Target Name="CopyToGummMods" AfterTargets="Publish">
+    <Message Text="Копирование мода в $(PublishOutput)" Importance="high" />
+    <Copy SourceFiles="$(PublishDir)**\*" 
+          DestinationFolder="$(PublishOutput)" 
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>
