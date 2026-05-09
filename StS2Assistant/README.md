@@ -26,15 +26,36 @@ AI-powered helper mod for Slay the Spire 2 (Godot 4.5.1 Mono) that provides real
    cd /path/to/StS2Assistant
    ```
 
-2. **Set up Godot Sharp references** (if not already available):
+2. **Set up Godot Sharp references**:
    
-   Create `local.props` file (see `local.props.example`):
+   **Option A: GodotSharp в папке игры (рекомендуется)**
+   
+   Если GodotSharp.dll находится в папке `data_sts2_windows_x86_64` рядом с проектом:
+   ```bash
+   # Убедитесь, что структура папок выглядит так:
+   # StS2Assistant/
+   # └── ../data_sts2_windows_x86_64/GodotSharp.dll
+   ```
+   
+   **Option B: Создать local.props файл**
+   
+   Скопируйте `local.props.example` в `local.props` и укажите путь:
    ```xml
    <Project>
      <PropertyGroup>
-       <GODOT_SHARP_PATH>/path/to/your/godot/GodotSharp/Api/Debug</GODOT_SHARP_PATH>
+       <!-- Путь к папке с GodotSharp.dll -->
+       <GODOT_SHARP_PATH>../data_sts2_windows_x86_64</GODOT_SHARP_PATH>
      </PropertyGroup>
    </Project>
+   ```
+   
+   **Option C: Переменная окружения**
+   ```bash
+   # Windows
+   setx GODOT_SHARP_PATH "C:\Path\To\Slay the Spire 2\data_sts2_windows_x86_64"
+   
+   # Linux
+   export GODOT_SHARP_PATH=~/.steam/steam/steamapps/common/Slay the Spire 2/data_sts2_linux_x86_64
    ```
 
 3. **Restore NuGet packages**:
@@ -49,12 +70,15 @@ AI-powered helper mod for Slay the Spire 2 (Godot 4.5.1 Mono) that provides real
 
 5. **Copy to game mods folder**:
    ```bash
-   # Copy the DLL and mod.json to your StS2 mods directory
+   # Создайте папку мода в директории игры
+   mkdir -p "Slay the Spire 2/mods/StS2Assistant"
+   
+   # Скопируйте DLL и манифест
    cp bin/publish/StS2Assistant.dll "Slay the Spire 2/mods/StS2Assistant/"
    cp mod.json "Slay the Spire 2/mods/StS2Assistant/"
    ```
 
-   The final structure should be:
+   Итоговая структура должна быть:
    ```
    Slay the Spire 2/mods/StS2Assistant/
    ├── StS2Assistant.dll

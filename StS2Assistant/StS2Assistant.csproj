@@ -8,6 +8,8 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin/$(Configuration)</OutputPath>
+    <!-- GodotSharp лежит в папке игры data_sts2_windows_x86_64 -->
+    <GodotSharpPath>$(MSBuildThisFileDirectory)..\data_sts2_windows_x86_64</GodotSharpPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,21 +18,22 @@
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
 
-  <!-- Godot 4.5.1 Mono references - adjust paths based on your installation -->
+  <!-- Godot 4.5.1 Mono references - ищем в папке игры data_sts2_windows_x86_64 -->
   <ItemGroup>
     <Reference Include="GodotSharp">
-      <HintPath>$(GODOT_SHARP_PATH)/GodotSharp.dll</HintPath>
+      <HintPath>$(GodotSharpPath)\GodotSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="GodotSharpEditor">
-      <HintPath>$(GODOT_SHARP_PATH)/GodotSharpEditor.dll</HintPath>
+      <HintPath>$(GodotSharpPath)\GodotSharpEditor.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
 
-  <!-- Fallback for local development without GODOT_SHARP_PATH -->
-  <PropertyGroup Condition="'$(GODOT_SHARP_PATH)' == ''">
-    <GODOT_SHARP_PATH>../godot-sharp-assemblies</GODOT_SHARP_PATH>
+  <!-- Fallback: если не найдено в папке игры, пробуем переменную окружения или относительный путь -->
+  <PropertyGroup Condition="!Exists('$(GodotSharpPath)\GodotSharp.dll')">
+    <GodotSharpPath Condition="'$(GODOT_SHARP_PATH)' != ''">$(GODOT_SHARP_PATH)</GodotSharpPath>
+    <GodotSharpPath Condition="'$(GODOT_SHARP_PATH)' == ''">../godot-sharp-assemblies</GodotSharpPath>
   </PropertyGroup>
 
 </Project>
