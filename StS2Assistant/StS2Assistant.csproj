@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin/$(Configuration)</OutputPath>
+    <!-- GodotSharp лежит в папке игры data_sts2_windows_x86_64 -->
+    <GodotSharpPath>$(MSBuildThisFileDirectory)..\data_sts2_windows_x86_64</GodotSharpPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Alchyr.Sts2.BaseLib" Version="1.0.0" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <!-- Godot 4.5.1 Mono references - ищем в папке игры data_sts2_windows_x86_64 -->
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>$(GodotSharpPath)\GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharpEditor">
+      <HintPath>$(GodotSharpPath)\GodotSharpEditor.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Fallback: если не найдено в папке игры, пробуем переменную окружения или относительный путь -->
+  <PropertyGroup Condition="!Exists('$(GodotSharpPath)\GodotSharp.dll')">
+    <GodotSharpPath Condition="'$(GODOT_SHARP_PATH)' != ''">$(GODOT_SHARP_PATH)</GodotSharpPath>
+    <GodotSharpPath Condition="'$(GODOT_SHARP_PATH)' == ''">../godot-sharp-assemblies</GodotSharpPath>
+  </PropertyGroup>
+
+</Project>

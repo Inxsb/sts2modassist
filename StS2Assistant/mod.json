@@ -1,0 +1,20 @@
+{
+  "id": "StS2Assistant",
+  "name": "StS2 Assistant",
+  "author": "YourName",
+  "version": "1.0.0",
+  "description": "AI-powered helper mod with build recommendations, card scoring, and draw probability calculation",
+  "godot_version": "4.5.1",
+  "main_dll": "StS2Assistant.dll",
+  "dependencies": [
+    "Alchyr.Sts2.BaseLib"
+  ],
+  "config_schema": {
+    "OverlayEnabled": "boolean",
+    "CardHighlightingEnabled": "boolean",
+    "ShowDrawProbabilities": "boolean",
+    "AutoSelectBuild": "boolean",
+    "OverlayPosition": "integer",
+    "DebugMode": "boolean"
+  }
+}

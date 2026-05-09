@@ -1,0 +1,36 @@
+```
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.nupkg
+*.snupkg
+
+# Dependencies
+packages/
+node_modules/
+
+# Configuration
+local.props
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vs/
+.idea/
+*.userprefs
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Testing
+TestResults/
+```

@@ -1,0 +1,39 @@
+<!-- Project-specific settings for local development -->
+<!-- Copy this file to local.props and adjust paths for your system -->
+
+<Project>
+  <PropertyGroup>
+    <!-- 
+      Путь к папке с GodotSharp.dll и GodotSharpEditor.dll
+      
+      StS2 Assistant: GodotSharp лежит в папке игры data_sts2_windows_x86_64
+      Если вы копируете мод в папку с игрой, путь будет относительным:
+      
+      Windows (рекомендуется):
+        ..\data_sts2_windows_x86_64
+      
+      Linux:
+        ../data_sts2_linux_x86_64
+      
+      macOS:
+        ../data_sts2_macos_x86_64
+      
+      Если мод разрабатывается отдельно от игры, укажите полный путь:
+      
+      Windows:
+        C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64
+      
+      Linux:
+        ~/.local/share/Steam/steamapps/common/Slay the Spire 2/data_sts2_linux_x86_64
+    -->
+    <GODOT_SHARP_PATH>../data_sts2_windows_x86_64</GODOT_SHARP_PATH>
+    
+    <!-- Альтернатива: используйте переменную окружения GODOT_SHARP_PATH -->
+    <!-- setx GODOT_SHARP_PATH "C:\Path\To\Slay the Spire 2\data_sts2_windows_x86_64" -->
+  </PropertyGroup>
+  
+  <!-- Import NuGet packages from local folder if needed -->
+  <!-- <ItemGroup>
+    <PackageReference Include="Alchyr.Sts2.BaseLib" Version="1.0.0" />
+  </ItemGroup> -->
+</Project>
